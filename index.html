@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoolaCafe Türkiye</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sb-green': '#0F3940',
+                        'sb-dark': '#0F3940',
+                        'sb-light': '#c78d53',
+                        'sb-cream': '#f2f0eb',
+                        'sb-gray': '#f9f9f9'
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-gray-800 flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+     <nav class="bg-white py-6 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Yuvarlak logo yerine img/logo.png eklendi -->
+                <a href="index.html" class="flex items-center">
+                    <img src="img/logo.png" alt="MoolaCafe Logo" class="h-14 w-auto object-contain">
+                </a>
+                <div class="flex gap-8 font-bold text-sm tracking-widest text-black uppercase">
+                    <a href="index.html" class="hover:text-sb-green transition">Menü</a>
+                    <a href="#" class="hover:text-sb-green transition">Kampanyalar</a>
+                    <a href="#" class="hover:text-sb-green transition">Sosyal Sorumluluk</a>
+                    <a href="#" class="hover:text-sb-green transition">Kariyer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-sb-light relative overflow-hidden">
+        <div class="container mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 z-10 text-center md:text-left mb-8 md:mb-0">
+                <span class="bg-sb-green text-white px-3 py-1 text-sm font-bold rounded mb-4 inline-block">#KALPKALBE</span>
+                <h1 class="text-4xl md:text-6xl font-black text-sb-dark mb-4 leading-tight">
+                    İYİLİĞİ<br>BÜYÜTÜYORUZ.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-6 font-medium">
+                    Türkiye'nin ikinci Community Store'u, artık İzmir Park Yaşam'da!
+                </p>
+            </div>
+            <div class="md:w-1/2 relative">
+                 <img src="img/Opera Anlık görüntü_2026-02-16_201349_lh3.googleusercontent.com.png" alt="Community" class="rounded-xl shadow-lg transform rotate-2 hover:rotate-0 transition duration-500 w-full object-cover h-80">
+            </div>
+        </div>
+    </header>
+
+    <!-- DİNAMİK ÜRÜNLER BÖLÜMÜ -->
+    <main class="flex-grow">
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 id="section-title" class="text-2xl font-bold text-sb-dark mb-2">İçecekler</h2>
+                    <p class="text-sm text-gray-500 mb-6">Her yudumda tazelemek ve keyif için harika seçenekler</p>
+                    
+                    <div class="flex justify-center gap-8 text-sm font-bold text-gray-400 border-b border-gray-200 inline-block w-full max-w-md mx-auto">
+                        <button onclick="switchCategory('drink')" id="tab-drink" class="pb-3 border-b-2 border-sb-dark text-sb-dark transition-colors w-1/2">
+                            İçecekler
+                        </button>
+                        <button onclick="switchCategory('food')" id="tab-food" class="pb-3 border-b-2 border-transparent hover:text-sb-dark transition-colors w-1/2">
+                            Yiyecekler
+                        </button>
+                    </div>
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+                    <!-- Javascript burayı dolduracak -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-sb-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="mb-8">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                     <i class="fa-solid fa-mug-hot text-sb-dark text-xl"></i>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-600 pb-10 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4">Hakkımızda</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Tarihçe</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sürdürülebilirlik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kahve</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Kahve Çekirdekleri</a></li>
+                        <li><a href="#" class="hover:text-white transition">MoolaCafe Reserve™</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="text-xs text-gray-400">© 2026 MoolaCafe Coffee Company. Tüm hakları saklıdır.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            // İçecekler (Unsplash stabil linkleri)
+            { id: 101, category: 'drink', name: 'Iced Pistachio Macchiato', image: 'img/matchabirsey.png', bg: 'bg-amber-900' },
+            { id: 102, category: 'drink', name: 'Caffè Latte', image: 'img/1j19r3y78mj-removebg-preview.png', bg: 'bg-amber-100' },
+            { id: 103, category: 'drink', name: 'Caramel Macchiato', image: 'img/karamellimatcak.png', bg: 'bg-amber-100' },
+            { id: 104, category: 'drink', name: 'White Chocolate Mocha', image: 'img/vaytcaklıtmoka.png', bg: 'bg-amber-100' },
+            // Yiyecekler (Unsplash stabil linkleri)
+            { id: 201, category: 'food', name: 'Misty Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=600', bg: 'bg-gray-200' },
+            { id: 202, category: 'food', name: 'Mozaik Pasta', image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=600', bg: 'bg-gray-200' },
+            { id: 203, category: 'food', name: 'Very Berry Muffin', image: 'https://images.unsplash.com/photo-1558401391-7899b4bd5bbf?auto=format&fit=crop&q=80&w=600', bg: 'bg-red-50' },
+            { id: 204, category: 'food', name: 'Cheese Sandwich', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=600', bg: 'bg-yellow-50' },
+        ];
+
+        function switchCategory(category) {
+            const container = document.getElementById('product-grid');
+            const title = document.getElementById('section-title');
+            title.textContent = category === 'drink' ? 'İçecekler' : 'Yiyecekler';
+            updateTabStyles(category);
+
+            const filteredProducts = products.filter(p => p.category === category);
+            container.innerHTML = '';
+            
+            // Ürünleri render et
+            filteredProducts.forEach(product => {
+                const productHTML = `
+                    <div class="group cursor-pointer text-center" onclick="goToProduct(${product.id})">
+                        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-transparent group-hover:border-sb-green transition duration-300 mx-auto mb-4 ${product.bg} flex items-center justify-center shadow-sm bg-gray-100">
+                            <img src="${product.image}" alt="${product.name}" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" 
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Starbucks';">
+                        </div>
+                        <h3 class="font-bold text-sm text-gray-800 group-hover:text-sb-green transition">${product.name}</h3>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', productHTML);
+            });
+        }
+
+        function updateTabStyles(activeCategory) {
+            const tabDrink = document.getElementById('tab-drink');
+            const tabFood = document.getElementById('tab-food');
+            
+            if (activeCategory === 'drink') {
+                tabDrink.className = 'pb-3 border-b-2 border-sb-dark text-sb-dark transition-colors w-1/2';
+                tabFood.className = 'pb-3 border-b-2 border-transparent text-gray-400 hover:text-sb-dark transition-colors w-1/2';
+            } else {
+                tabFood.className = 'pb-3 border-b-2 border-sb-dark text-sb-dark transition-colors w-1/2';
+                tabDrink.className = 'pb-3 border-b-2 border-transparent text-gray-400 hover:text-sb-dark transition-colors w-1/2';
+            }
+        }
+
+        function goToProduct(id) {
+            window.location.href = `urun.html?id=${id}`;
+        }
+
+        // DOM yüklendiğinde başlat
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => switchCategory('drink'));
+        } else {
+            switchCategory('drink');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoolaCafe Türkiye</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sb-green': '#0F3940',
+                        'sb-dark': '#0F3940',
+                        'sb-light': '#d4e9e2',
+                        'sb-cream': '#f2f0eb',
+                        'sb-gray': '#f9f9f9'
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans text-gray-800 bg-white flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+   <nav class="bg-white py-6 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Yuvarlak logo yerine img/logo.png eklendi -->
+                <a href="index.html" class="flex items-center">
+                    <img src="img/logo.png" alt="MoolaCafe Logo" class="h-14 w-auto object-contain">
+                </a>
+                <div class="flex gap-8 font-bold text-sm tracking-widest text-black uppercase">
+                    <a href="index.html" class="hover:text-sb-green transition">Menü</a>
+                    <a href="#" class="hover:text-sb-green transition">Kampanyalar</a>
+                    <a href="#" class="hover:text-sb-green transition">Sosyal Sorumluluk</a>
+                    <a href="#" class="hover:text-sb-green transition">Kariyer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ÜRÜN HERO ALANI -->
+    <main id="product-content" class="hidden flex-grow">
+        <section class="bg-sb-dark text-white py-16 md:py-24 w-full">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 id="product-name" class="text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">Yükleniyor...</h1>
+                    <p id="product-desc" class="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed">
+                        Ürün açıklaması hazırlanıyor. Starbucks kalitesiyle en taze malzemeler kullanılarak hazırlanmıştır.
+                    </p>
+                    <p class="text-xs text-gray-400 mt-6">*Ürün stokları mağaza bazlı değişkenlik göstermektedir.</p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <img id="product-img" src="" alt="" class="w-full h-full object-contain z-10 relative">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BESİN DEĞERLERİ ALANI (TAM GENİŞLİK) -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-5xl mx-auto border border-gray-100 rounded-xl shadow-sm overflow-hidden bg-white">
+                    <div class="p-8 md:p-12">
+                        <div class="mb-8">
+                            <h2 id="product-info-name" class="text-3xl font-bold text-sb-dark mb-1"></h2>
+                            <p class="text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">GRANDE BOY İÇİN</p>
+                        </div>
+                        
+                        <div class="border-t border-gray-200">
+                            <!-- Satır: Kalori (Tam genişlikte dağıtıldı) -->
+                            <div class="flex justify-between items-center py-6 border-b border-gray-100">
+                                <span class="text-lg font-bold text-gray-800">Kalori (kcal)</span>
+                                <span id="product-calories" class="text-lg font-bold text-sb-green"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Bilgilendirme Notu -->
+                        <div class="mt-10">
+                            <p class="text-[11px] text-gray-400 leading-relaxed max-w-2xl italic">
+                                *Yetişkinlerin günde yaklaşık 2000 kcal'a ihtiyacı vardır. Kalori değerleri standart tarifler üzerinden hesaplanmıştır. Kafein içeriği yaklaşık bir değerdir ve kullanılan çekirdeğe göre farklılık gösterebilir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- HATA MESAJI -->
+    <div id="error-content" class="hidden py-32 text-center flex-grow">
+        <h2 class="text-2xl font-bold mb-4">Ürün bulunamadı.</h2>
+        <a href="index.html" class="text-sb-green font-bold underline">Ana sayfaya dön</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-sb-dark text-white pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="mb-8">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                     <i class="fa-solid fa-mug-hot text-sb-dark text-xl"></i>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-600 pb-10 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4">Hakkımızda</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Tarihçe</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sürdürülebilirlik</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Kahve</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Kahve Çekirdekleri</a></li>
+                        <li><a href="#" class="hover:text-white transition">Starbucks Reserve™</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-sb-dark flex items-center justify-center hover:bg-gray-200 transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="text-xs text-gray-400">© 2026 MoolaCafe Coffee Company. Tüm hakları saklıdır.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Görseller 403 hatası vermemesi için stabil kaynaklarla güncellendi
+        const products = [
+            { id: 101, name: 'Iced Pistachio Macchiato', image: 'img/matchabirsey.png', calories: '180 kcal | 753 kj', desc: 'Buzlu, Matcha yeşil çayı ve sütün eşsiz buluşması. Alternatif süt seçenekleriyle de harika!' },
+            { id: 102, name: 'Caffè Latte', image: 'img/1j19r3y78mj-removebg-preview.png', calories: '190 kcal | 795 kj', desc: 'Espresso ve sıcak sütün pürüzsüz karışımı, üzerine ince bir süt köpüğü.' },
+            { id: 103, name: 'Caramel Macchiato', image: 'img/karamellimatcak.png', calories: '210 kcal | 878 kj', desc: 'Karamelize şekerli ve vanilya aromalı sütlü kahve.' },
+            { id: 104, name: 'White Chocolate Mocha', image: 'img/vaytcaklıtmoka.png', calories: '350 kcal | 1464 kj', desc: 'Beyaz çikolata aromalı sütlü kahve.' },
+            { id: 201, name: 'Misty Cake', image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=600', calories: '420 kcal | 1757 kj', desc: 'Yumuşacık kek dokusu ve özel kremasıyla gününüze tat katacak bir seçenek.' },
+            { id: 202, name: 'Mozaik Pasta', image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=600', calories: '380 kcal | 1590 kj', desc: 'Klasik bisküvili çikolatalı lezzet, Starbucks yorumuyla.' },
+            { id: 203, name: 'Very Berry Muffin', image: 'https://images.unsplash.com/photo-1558401391-7899b4bd5bbf?auto=format&fit=crop&q=80&w=600', calories: '310 kcal | 1297 kj', desc: 'İçerisinde taze meyve taneleri bulunan, dışı kıtır içi yumuşak muffin.' },
+            { id: 204, name: 'Cheese Sandwich', image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=600', calories: '450 kcal | 1882 kj', desc: 'Özel peynir karışımı ve taze ekmeğiyle doyurucu bir alternatif.' }
+        ];
+
+        function loadProduct() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+            const product = products.find(p => p.id === productId);
+
+            const content = document.getElementById('product-content');
+            const error = document.getElementById('error-content');
+
+            if (product) {
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-info-name').textContent = product.name;
+                document.getElementById('product-desc').textContent = product.desc;
+                document.getElementById('product-calories').textContent = product.calories;
+                
+                const img = document.getElementById('product-img');
+                img.src = product.image;
+                img.alt = product.name;
+
+                content.classList.remove('hidden');
+            } else {
+                error.classList.remove('hidden');
+            }
+        }
+
+        window.onload = loadProduct;
+    </script>
+</body>
+</html>
